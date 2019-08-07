@@ -3,5 +3,6 @@ aws codepipeline start-pipeline-execution --name fristpipeline >> fristpipeline.
 data=$(grep "pipelineExecutionId" fristpipeline.log)
 pipelineid=$(echo "$data" | sed 's/.*| \(.*\)|/\1/')
 echo $pipelineid
-sudo ./status.sh $pipelineid
+chmod -R 777 status.sh
+./status.sh $pipelineid
 rm -rf fristpipeline.log

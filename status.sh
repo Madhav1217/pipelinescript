@@ -16,7 +16,7 @@ do
         echo $(grep "status" status_data.log)
         mv status_data.log bkstatus_data.log
         exit 0
-	else [ $status_value == Failed ]; then
+	elif [ $status_value == Failed ]; then
 	echo "Failed ->pipelineid: $pipelineid"
         echo $(grep "status" status_data.log)
         mv status_data.log bkstatus_data.log

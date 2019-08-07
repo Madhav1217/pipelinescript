@@ -1,7 +1,7 @@
 #!/bin/sh
-function pipeline
 pipelineid=$1
 echo $pipelineid
+function pipeline
 while true
 do
  pipeline =$(aws codepipeline get-pipeline-execution --pipeline-name fristpipeline --pipeline-execution-id $pipelineid )>> status_data.log 2>&1

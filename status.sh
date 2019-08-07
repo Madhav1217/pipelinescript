@@ -8,9 +8,9 @@ do
    cat status_data.log
    status_value=$(grep "InProgress" status_data.log)
    echo $status_value
-   break
    if [ $status_value == InProgress ]; then
    return $pipeline
+   break
   elif [ $status_value == Succeeded ]; then
   echo "Succeeded ->pipelineid: $pipelineid"
         echo $(grep "status" status_data.log)

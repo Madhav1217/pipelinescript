@@ -3,8 +3,8 @@ aws codepipeline start-pipeline-execution --name fristpipeline >> fristpipeline.
 data=$(grep "pipelineExecutionId" fristpipeline.log)
 pipelineid=$(echo "$data" | sed 's/.*| \(.*\)|/\1/')
 echo $pipelineid
-<<<<<<< HEAD
 pipelineid=$1
+echo $pipelineid
 while true
 do
    aws codepipeline get-pipeline-execution --pipeline-name fristpipeline --pipeline-execution-id $pipelineid >> status_data.log 2>&1
@@ -24,8 +24,3 @@ rm -rf fristpipeline.log
 
 
 
-=======
-chmod -R 777 status.sh
-./status.sh $pipelineid
-rm -rf fristpipeline.log
->>>>>>> f2542c8486de05a5f1f69c66235658575c8e5004
